@@ -106,18 +106,21 @@ input, select, textarea {
 	}
 
 	a {
+		text-decoration: none !important;
 		-moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: #4ca2e4;
-		text-decoration: none;
+		color: #33C3B3;
+		
 	}
 
 		a:hover {
-			color: #4ca2e4 !important;
+			color: #81f5a4 !important;
+			text-decoration: none !important;
 			border-bottom-color: transparent;
+			
 		}
 
 	strong, b {
@@ -131,9 +134,10 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2em 0;
+		
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1, h2, h3, h4, h5, h6{
 		color: #ffffff;
 		font-weight: 300;
 		line-height: 1em;
@@ -163,13 +167,14 @@ input, select, textarea {
 
 	h5 {
 		font-size: 0.9em;
-		line-height: 1.5em;
+		line-height: 1em;
 	}
 
 	h6 {
 		font-size: 0.7em;
 		line-height: 1.5em;
 	}
+
 
 	sub {
 		font-size: 0.8em;
@@ -2179,6 +2184,11 @@ input, select, textarea {
 		line-height: 1.5em;
 	}
 
+	header h7+ p {
+		font-size: 0.9em;
+		line-height: 1.5em;
+	}
+
 	header.major {
 		margin: 0 0 4em 0;
 		position: relative;
@@ -2186,7 +2196,7 @@ input, select, textarea {
 	}
 
 		header.major:after {
-			background: #e44c65;
+			background: #188F67;
 			content: '';
 			display: inline-block;
 			height: 0.2em;
@@ -2560,9 +2570,32 @@ input, select, textarea {
 			width: 100%;
 		}
 
-			.image.fit img {
-				width: 100%;
-			}
+		.image.fit img {
+			width: 100%;
+		}
+
+		.slideshow {
+			border-radius: 4px;
+			position: relative;
+			width: 500px; /* 設定容器寬度 */
+			height: 240px; /* 設定容器高度 */
+			overflow: hidden; /* 隱藏超出容器的部分 */
+		        }
+		        
+		        .slide-img {
+			border-radius: 4px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: none; /* 隱藏所有圖片 */
+		        }
+		        
+		        .slide-img:first-child {
+			border-radius: 4px;
+			display: block; /* 顯示第一個圖片 */
+		        }
 
 /* List */
 
@@ -2855,8 +2888,8 @@ input, select, textarea {
 		input[type="button"]:active,
 		.button:hover,
 		.button:active {
-			box-shadow: inset 0 0 0 1px #e44c65;
-			color: #e44c65 !important;
+			box-shadow: inset 0 0 0 1px #1DB975;
+			color: #1DB975 !important;
 		}
 
 		input[type="submit"]:active,
@@ -3139,15 +3172,15 @@ input, select, textarea {
 		}
 
 		.spotlight.style1 .content {
-			border-color: #e44c65;
+			border-color: #1DB954;
 		}
 
 		.spotlight.style2 .content {
-			border-color: #5480f1;
+			border-color: #1DB975;
 		}
 
 		.spotlight.style3 .content {
-			border-color: #39c088;
+			border-color: #1DB9A6;
 		}
 
 		.spotlight.inactive .content {
@@ -3201,7 +3234,7 @@ input, select, textarea {
 	}
 
 		.wrapper.style2 {
-			background: #e44c65;
+			background: #146D4F;
 		}
 
 			.wrapper.style2 input[type="text"]:focus,
@@ -3236,7 +3269,7 @@ input, select, textarea {
 			.wrapper.style2 input[type="button"].primary,
 			.wrapper.style2 .button.primary {
 				background-color: #ffffff;
-				color: #e44c65 !important;
+				color: #146D4F !important;
 			}
 
 				.wrapper.style2 input[type="submit"].primary:hover, .wrapper.style2 input[type="submit"].primary:active,
@@ -3390,9 +3423,19 @@ input, select, textarea {
 			height: inherit;
 			left: 1.25em;
 			line-height: inherit;
-			margin: 0;
+			margin: 0 0.5em 0 0;
 			position: absolute;
 			top: 0;
+		}
+
+		#header h5 {
+			padding-top: 1.5em;
+			height: 1.5em;
+			left: 1.45em;
+			/* line-height: 1em ; */
+			margin: 0.5em 0 ;
+			position: relative;
+			top: 1.5em;
 		}
 
 		#header nav {
@@ -3430,7 +3473,7 @@ input, select, textarea {
 						}
 
 					#header nav ul li.active > a, #header nav ul li.active > span {
-						color: #e44c65;
+						color: #33C3B3;
 					}
 
 					#header nav ul li > ul {
@@ -3451,8 +3494,10 @@ input, select, textarea {
 
 	#banner {
 		background-attachment: fixed;
-		background-color: #272833;
-		background-image: url("../../images/banner.jpg");
+		/* background-color: #272833; */
+		background-color: #f0f1f72d;
+		/* background-image: url("../../images/banner.jpg"); */
+		background-image: url("images/bg2.jpeg");
 		background-position: center center;
 		background-size: cover;
 		box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
@@ -3930,7 +3975,7 @@ input, select, textarea {
 					}
 
 					#titleBar .toggle:before {
-						background: #e44c65;
+						background: #7c9784b6;
 						color: rgba(255, 255, 255, 0.5);
 						content: '\f0c9';
 						display: block;

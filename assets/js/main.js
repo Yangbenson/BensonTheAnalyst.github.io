@@ -4,6 +4,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
 (function($) {
 
 	var	$window = $(window),
@@ -31,7 +32,7 @@
 
 	// Scrolly links.
 		$('.scrolly').scrolly({
-			speed: 2000
+			speed: 1500
 		});
 
 	// Dropdowns.
@@ -246,5 +247,26 @@
 
 		$banner
 			._parallax();
+
+
+	$('.slideshow').each(function () {
+
+		let slideImgs = $(this).find('img'),
+			slideImgsCount = slideImgs.length,
+			currentIndex = 0;
+		
+		slideImgs.eq(currentIndex).fadeIn();
+		
+		setInterval(showNextSlide, 5000);
+		
+		function showNextSlide() {
+			let nextIndex = (currentIndex + 1) % slideImgsCount;
+			console.log(nextIndex)
+			slideImgs.eq(currentIndex).fadeOut(500);
+			slideImgs.eq(nextIndex).fadeIn(1000);
+			currentIndex = nextIndex;
+		}
+		})
+
 
 })(jQuery);
